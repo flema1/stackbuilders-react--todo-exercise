@@ -7,7 +7,6 @@ node_modules/*
 # Compiled JS
 client/public/bundle.js
 client/public/bundle.js.map
-client/public/index.html
 
 # NPM errors
 npm-debug.log
