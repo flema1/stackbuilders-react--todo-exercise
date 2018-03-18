@@ -47,14 +47,14 @@ export default class Home extends React.Component {
     }
 
     onKeyPress(e) {
-          const { todo } = this.state;
+          const { todo,formErrors } = this.state;
     //listen for user press Enter key
         if (e.key === 'Enter') {
             event.preventDefault();
     //validate todo input
             this.validateField('todo', todo);
 
-            if (this.state.formErrors.todo===''){
+            if (formErrors.todo===''){
                 let currToDos=this.state.toDos;
                 currToDos.push(todo);
                 this.setState({
@@ -73,6 +73,13 @@ export default class Home extends React.Component {
             formErrors:{ todo:''}
         });
     }
+    disableInput(){
+        const { formErrors } = this.state;
+        if(formErrors.todo){
+            return true
+        }
+        return false
+    }
 
     render() {
         const { todo,formErrors,toDos } = this.state;
@@ -83,6 +90,7 @@ export default class Home extends React.Component {
                 onInputUpdate={this.onInputUpdate.bind(this)}
                 onKeyPress={this.onKeyPress.bind(this)}
                 value={ todo }
+                disabled={ this.disableInput()}
             />
             <FormErrors 
                 errors={ formErrors }

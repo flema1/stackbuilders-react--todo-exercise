@@ -1,7 +1,8 @@
 
 import React from 'react';
 
-const TodoForm = ({onInputUpdate, value, onKeyPress}) => {
+const TodoForm = ({onInputUpdate, value, onKeyPress, disabled}) => {
+  console.log(disabled)
   return (
     <div>
        
@@ -15,6 +16,7 @@ const TodoForm = ({onInputUpdate, value, onKeyPress}) => {
                     onChange={(e)=>onInputUpdate(e)}
                     value={value}
                     onKeyPress={(e)=>onKeyPress(e)}
+                    disabled = {disabled}
                 />
             </div>
     </div>
