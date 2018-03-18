@@ -18,6 +18,11 @@
     display: flex;
     justify-content: center;
 }
+.app-container {
+    width: 400px;
+    height: 500px;
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);  
+}
 
 .home-container{
      display: flex;
