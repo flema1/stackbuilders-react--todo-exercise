@@ -8,6 +8,7 @@
 .todo-form-input{
     width: 200px;
     font-size: 14px;
+    padding: 5px 0 5px 5px;
 }
 
 .todo-form-input:focus {
@@ -29,13 +30,14 @@
     justify-content: center;
 }
 .app-container {
+    margin-top: 50px;
     width: 400px;
     height: 500px;
     box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);  
 }
 
 .home-container {
-     display: flex;
+    display: flex;
     flex-direction: column;
 }
 
@@ -52,6 +54,11 @@
 
 .todos-container li {
    padding: 5px 0 5px 0;
+   font-family: Arial, Helvetica, sans-serif;
+ }
+
+ .todos-container li p input {
+     cursor: pointer;
  }
 
 .errors-container {
