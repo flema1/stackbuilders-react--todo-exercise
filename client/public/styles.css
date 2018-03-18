@@ -27,7 +27,7 @@
     box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);  
 }
 
-.home-container{
+.home-container {
      display: flex;
     flex-direction: column;
 }
@@ -36,26 +36,30 @@
     margin: 0 0 0 20px;
 }
 
-.todos-container{
+.todos-container {
     height: 330px;
     overflow: scroll;
     list-style: none;
     font-size: 14px;
 }
 
-.errors-container{
+.todos-container li {
+   padding: 5px 0 5px 0;
+ }
+
+.errors-container {
     height: 20px;
     font-size: 12px;
     padding-top: 5px;
 }
 
-.clear-error{
+.clear-error {
     cursor: pointer;
     color: red;
     font-size: 14px;
 }
 
-.errors-section{
+.errors-section {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -64,11 +68,11 @@
     color: #9e9e9e;
 }
 
-.errors-section p{
+.errors-section p {
      padding: 5px 0 5px 0;
 }
 
-.errors-section span{
+.errors-section span {
     font-size: 15px;
     padding-left: 10px;
 }
