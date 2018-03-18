@@ -7,12 +7,12 @@ const FormErrors = ({ errors, clear}) => {
         {Object.keys(errors).map((fieldName, i) => {
             if (errors[fieldName]!==''){
                  return (
-                    <div>
-                        <p key={i}> { errors[fieldName] }</p>
+                    <div key={i}> 
+                        <p > { errors[fieldName] }</p>
                         <p onClick={()=>clear()}>close error</p>
                     </div>
                 ) 
-            } else return null;       
+            }
          })}
     </div>
   );
