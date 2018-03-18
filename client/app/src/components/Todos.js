@@ -4,7 +4,7 @@ import React from 'react';
 const Todos = ({todos}) => {
     console.log(todos)
   return (
-    <div>
+    <div className={'todos-container'}>
        {
            todos.map((item, i) => {
                  return (
