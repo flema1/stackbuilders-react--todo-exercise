@@ -85,7 +85,7 @@ export default class Home extends React.Component {
         const { todo,formErrors,toDos } = this.state;
         return (
         <div className="home-container" >
-            <h1>home</h1>
+            <h1>What to do</h1>
             <ToDoForm 
                 onInputUpdate={this.onInputUpdate.bind(this)}
                 onKeyPress={this.onKeyPress.bind(this)}
