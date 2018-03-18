@@ -28,6 +28,22 @@ export default class Home extends React.Component {
         });
     }
 
+    validateField(fieldname,value) {
+        let currFormErrors, updatedFormErrors;
+        //save current errors
+        currFormErrors = this.state.formErrors;
+
+        //check if todo input is valid, not empty 
+        if ((value.length===0 || value=='') && fieldname==='todo'){
+        //set todo error
+                currFormErrors['todo']='is empty!';
+        //update errors in state
+                updatedFormErrors = currFormErrors;
+                this.setState({
+                    formErrors:updatedFormErrors
+                })
+        }
+    }
 
     onKeyPress(e) {
           const { todo } = this.state;
@@ -37,7 +53,17 @@ export default class Home extends React.Component {
     //validate todo input
             this.validateField('todo', todo)
             console.log('do validate');
+            
+            if (this.state.formErrors.todo===''){
+                let currToDos=this.state.toDos;
+                currToDos.push(todo);
+                this.setState({
+                    todos:currToDos,
+                    todo:''
+                })
+            }
         }
+        
     }
 
     render() {
