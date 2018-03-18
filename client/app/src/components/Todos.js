@@ -2,12 +2,14 @@
 import React from 'react';
 
 const Todos = ({todos}) => {
+    console.log(todos)
   return (
     <div>
-       {todos.map((item, i) => {
+       {
+           todos.map((item, i) => {
                  return (
-                    <div>
-                        <p key={i}> { item }</p>
+                    <div key={i}>
+                        <p > { item }</p>
                     </div>
                 ) 
          })} 
