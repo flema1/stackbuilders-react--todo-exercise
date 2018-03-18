@@ -1,3 +1,10 @@
+.App{
+    justify-content: center;
+    display: flex;
+    height: 100%;
+    position: fixed;
+    width: 100%;
+}
 .todo-form-input{
     width: 200px;
 }
@@ -5,4 +12,14 @@
 .home-container h1{
     font-family: Arial, Helvetica, sans-serif;
     font-weight: lighter;
+    text-align: center;
+}
+.todo-form-group{
+    display: flex;
+    justify-content: center;
+}
+
+.home-container{
+     display: flex;
+    flex-direction: column;
 }
