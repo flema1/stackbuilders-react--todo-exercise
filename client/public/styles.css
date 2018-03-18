@@ -10,6 +10,13 @@
     font-size: 14px;
 }
 
+.todo-form-input:focus {
+    outline: none !important;
+    border:1px solid #ff594d;
+    box-shadow: 0 0 3px orange;
+    background: none;
+}
+
 .home-container h1{
     font-family: Arial, Helvetica, sans-serif;
     font-weight: lighter;
