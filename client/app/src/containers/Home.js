@@ -1,6 +1,7 @@
 import React from 'react';
 import ToDoForm from '../components/ToDoForm';
 import FormErrors from '../components/FormErrors';
+import Todos from '../components/Todos';
 
 export default class Home extends React.Component {
     constructor(props){
@@ -74,7 +75,7 @@ export default class Home extends React.Component {
     }
 
     render() {
-        const { todo,formErrors } = this.state;
+        const { todo,formErrors,toDos } = this.state;
         return (
         <div className="home-container" >
             <h1>home</h1>
@@ -86,6 +87,9 @@ export default class Home extends React.Component {
             <FormErrors 
                 errors={ formErrors }
                 clear={this.onClear.bind(this)} 
+            />
+            <Todos
+                 todos={ toDos }
             />
         </div>);
     }
