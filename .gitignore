@@ -4,9 +4,6 @@ node_modules/*
 # ...except the symlink to ourselves.
 !node_modules/APP
 
-# Compiled JS
-client/public/bundle.js
-client/public/bundle.js.map
 
 # NPM errors
 npm-debug.log
