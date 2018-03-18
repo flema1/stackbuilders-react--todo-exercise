@@ -1,13 +1,16 @@
 
 import React from 'react';
 
-const FormErrors = ({ errors }) => {
+const FormErrors = ({ errors, clear}) => {
   return (
     <div>
         {Object.keys(errors).map((fieldName, i) => {
             if (errors[fieldName]!==''){
                  return (
-                    <p key={i}>{fieldName} { errors[fieldName] }</p>
+                    <div>
+                        <p key={i}> { errors[fieldName] }</p>
+                        <p onClick={()=>clear()}>close error</p>
+                    </div>
                 ) 
             } else return null;       
          })}

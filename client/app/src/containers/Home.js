@@ -36,7 +36,7 @@ export default class Home extends React.Component {
         //check if todo input is valid, not empty 
         if ((value.length===0 || value=='') && fieldname==='todo'){
         //set todo error
-                currFormErrors['todo']='is empty!';
+                currFormErrors['todo']='You cannot add an empty item';
         //update errors in state
                 updatedFormErrors = currFormErrors;
                 this.setState({
@@ -51,9 +51,8 @@ export default class Home extends React.Component {
         if (e.key === 'Enter') {
             event.preventDefault();
     //validate todo input
-            this.validateField('todo', todo)
-            console.log('do validate');
-            
+            this.validateField('todo', todo);
+
             if (this.state.formErrors.todo===''){
                 let currToDos=this.state.toDos;
                 currToDos.push(todo);
@@ -64,6 +63,14 @@ export default class Home extends React.Component {
             }
         }
         
+    }
+
+    onClear(){
+        //closes error message
+        this.setState({
+        //clear errors in state
+            formErrors:{ todo:''}
+        });
     }
 
     render() {
@@ -77,7 +84,8 @@ export default class Home extends React.Component {
                 value={ todo }
             />
             <FormErrors 
-                errors={ formErrors } 
+                errors={ formErrors }
+                clear={this.onClear.bind(this)} 
             />
         </div>);
     }
