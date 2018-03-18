@@ -1,10 +1,10 @@
 
 import React from 'react';
 
-const TodoForm = ({onInputUpdate, value }) => {
+const TodoForm = ({onInputUpdate, value, onKeyPress}) => {
   return (
     <div>
-        <form name="todoForm">
+       
             <div className="todo-form-group">
                 <label htmlFor={'email'}>What to do</label>
                 <input 
@@ -14,10 +14,9 @@ const TodoForm = ({onInputUpdate, value }) => {
                     placeholder='Write something to do...' 
                     onChange={(e)=>onInputUpdate(e)}
                     value={value}
+                    onKeyPress={(e)=>onKeyPress(e)}
                 />
-                <button className="add-Btn" onClick={()=>console.log('add')}>add</button>
             </div>
-        </form>
     </div>
   );
 };

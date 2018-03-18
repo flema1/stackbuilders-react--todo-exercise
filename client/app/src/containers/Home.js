@@ -16,6 +16,7 @@ export default class Home extends React.Component {
     }
 
     onInputUpdate(event){
+       event.preventDefault();
        const { todo } = this.state;
        //getting vale from event
        const name = event.target.name;
@@ -27,6 +28,18 @@ export default class Home extends React.Component {
         });
     }
 
+
+    onKeyPress(e) {
+          const { todo } = this.state;
+    //listen for user press Enter key
+        if (e.key === 'Enter') {
+            event.preventDefault();
+    //validate todo input
+            this.validateField('todo', todo)
+            console.log('do validate');
+        }
+    }
+
     render() {
         const { todo,formErrors } = this.state;
         return (
@@ -34,10 +47,11 @@ export default class Home extends React.Component {
             <h1>home</h1>
             <ToDoForm 
                 onInputUpdate={this.onInputUpdate.bind(this)}
+                onKeyPress={this.onKeyPress.bind(this)}
                 value={ todo }
             />
             <FormErrors 
-                errors={'formErrors'} 
+                errors={ formErrors } 
             />
         </div>);
     }
