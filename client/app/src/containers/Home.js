@@ -99,6 +99,7 @@ export default class Home extends React.Component {
             <Todos
                  todos={ toDos }
             />
+            <p> { toDos.length } items</p>
         </div>);
     }
 }
