@@ -81,8 +81,6 @@ $ npm start
 And open the web browser to <http://localhost:8080/>. To use the To Do app!
 
 
-Or you can execute the JavaScript bundle in an html file. Please copy and serve bundle.js, index.html and styles.css located in client/public.
-
 
 # Additional Notes
 
