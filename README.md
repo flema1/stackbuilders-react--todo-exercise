@@ -11,46 +11,94 @@ For the purpose of this project, this repo contains a pre-built JavaScript bundl
 
 ### To use
 
-You'll need to have [obsproject](https://obsproject.com/) installed in your system.
+You'll need to have [git](https://git-scm.com/) and [node](https://nodejs.org/en/) installed in your system.
 Fork and clone the project:
 
 ```
 $ git clone https://github.com/flema1/stackbuilders-react--todo-exercise.git
 ```
 
-Or 
+Then install the dependencies:
 
 ```
-Download Zip
+$ npm install
 ```
-
 ### Project Structure 
 ```yml
   root directory:
-  animations:
-  │  
-  │# static files
-  ├─ bee:
-     │   
-     ├── index.html 
-     └── styles.css    
+  ├── client:
+  │   │   # only react app files here
+  │   ├── app:
+  │   │   # static files
+  │   ├── public:
+  │   │   ├── bundle.js 
+  │   │   ├── index.html 
+  │   │   └── styles.css    
+  │   ├── entry.js
+  │   └── index.js
+  └── webpack.config.js
 ```
-### Executing the HTML Template in OBS
+### Executing the Bundle.js in an HTML Template
 
-Copy index.html and styles.css files located in the `obs-pligins/bee` directory. 
+Copy the pre-built bundle.js and styles.css files located in the `client/public` directory. 
 
-In OBS. 
+Serve the bundle.js file in an HTML template as below.
 
-Under “Sources”, click “+” icon.
-Select “Browser”, click “Create new”. Click ok. 
+CSS assets may be included with `<link>` tags in the HTML head.
 
-Check “Local file”, press “Browse”. Navigate to “Desktop”. 
-Go to OBS/Animations/bee. Select “index.html”. Click “Open”.
+```html
+!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Todo App</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div id="root">
+    </div>
+  </body>
+    <script src="bundle.js"></script>
+</html>
+```
 
-Click “ok”.
+### Building for development
+Below the commands to build the bundle file and serve locally.
+
+Invoke Webpack without any arguments:
+
+```bash
+$ webpack
+```
+
+
+Run build locally:
 
 ```
-Sources > Browser > Create New > Local File > browser > desktop > index.html > ok
+$ npm start
 ```
 
+And open the web browser to <http://localhost:8080/>. To use the To Do app!
 
+
+
+# Additional Notes
+
+
+### What is Webpack
+
+Webpack is a front-end tool to build JavaScript module scripts for browsers.
+
+Webpack needs a configuration file called `webpack.config.js` which is just a CommonJS module.
+
+Here's an example webpack config.
+
+```javascript
+// webpack.config.js
+module.exports = {
+  entry: './main.js',
+  output: {
+    filename: 'bundle.js'
+  }
+};
+```
